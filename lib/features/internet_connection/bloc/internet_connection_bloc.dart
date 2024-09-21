@@ -23,12 +23,12 @@ class InternetConnectionBloc extends Bloc<InternetConnectionEvent, InternetConne
     CheckInternetConnection event,
     Emitter<InternetConnectionState> emit,
   ) async {
-    bool result = await _internetConnectionHelper.hasInternetAccess;
-    if (result) {
-      emit(HasInternetConnectionState());
-    } else {
-      emit(NoInternetConnectionState());
-    }
+    // bool result = await _internetConnectionHelper.hasInternetAccess;
+    // if (result) {
+    //   emit(HasInternetConnectionState());
+    // } else {
+    //   emit(NoInternetConnectionState());
+    // }
 
     await emit.forEach<InternetStatus>(
       _internetConnectionHelper.onStatusChange,

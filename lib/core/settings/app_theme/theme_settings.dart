@@ -1,7 +1,8 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
+import 'package:flutter/material.dart';
 
-abstract class ThemeSettings {
-  final light = FlexThemeData.light(
+abstract final class ThemeSettings {
+  static final ThemeData light = FlexThemeData.light(
     scheme: FlexScheme.materialBaseline,
     surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
     blendLevel: 7,
@@ -20,7 +21,7 @@ abstract class ThemeSettings {
     // fontFamily: GoogleFonts.notoSans().fontFamily,
   );
 
-  final dark = FlexThemeData.dark(
+  static final ThemeData dark = FlexThemeData.dark(
     scheme: FlexScheme.materialBaseline,
     surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
     blendLevel: 13,

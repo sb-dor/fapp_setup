@@ -18,6 +18,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
   @override
   void initState() {
     super.initState();
+    // write all your code setting here
+    // like checking internet connection and other functions
     context.read<InternetConnectionBloc>().add(const CheckInternetConnection());
     AutoRouter.of(context).replaceAll(
       [const HomeRoute()],
