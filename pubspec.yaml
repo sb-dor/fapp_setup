@@ -48,6 +48,7 @@ dependencies:
   shared_preferences: ^2.3.2
   internet_connection_checker_plus: ^2.5.2
   fluttertoast: ^8.2.8
+  flutter_native_splash: ^2.4.1
 
 dev_dependencies:
   flutter_test:
@@ -102,3 +103,16 @@ flutter:
   # see https://flutter.dev/to/font-from-package
 flutter_intl:
   enabled: true
+
+# dart run flutter_native_splash:remove
+# dart run flutter_native_splash:create
+flutter_native_splash:
+  android: true
+  ios: true
+
+  color: "#000000"
+  image: assets/logo/flutter-logo.png
+
+  android_12:
+    image: assets/logo/flutter-logo.png
+    color: "#000000"
