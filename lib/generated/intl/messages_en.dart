@@ -24,6 +24,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appSettings": MessageLookupByLibrary.simpleMessage("App settings"),
         "authorizationPage":
-            MessageLookupByLibrary.simpleMessage("Authorization page")
+            MessageLookupByLibrary.simpleMessage("Authorization page"),
+        "internetHasBeenConnected":
+            MessageLookupByLibrary.simpleMessage("Internet has been connected"),
+        "noInternetConnection":
+            MessageLookupByLibrary.simpleMessage("No internet connection")
       };
 }

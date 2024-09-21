@@ -6,8 +6,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 final class AuthMiddleWare extends AutoRouteGuard {
   final BuildContext context;
+  final PageInfo? pageInfo;
 
-  AuthMiddleWare(this.context);
+  AuthMiddleWare(this.context, {this.pageInfo});
 
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) {
@@ -15,7 +16,11 @@ final class AuthMiddleWare extends AutoRouteGuard {
     final authBloc = BlocProvider.of<AuthBloc>(context);
 
     if (authBloc.state is AuthenticatedState) {
-      resolver.next();
+      if (pageInfo != null) {
+        resolver.redirect(const HomeRoute());
+      } else {
+        resolver.next();
+      }
     } else {
       //
       resolver.redirect(

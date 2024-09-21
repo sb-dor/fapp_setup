@@ -12,8 +12,15 @@ final class AppRoutes extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          page: HomeRoute.page,
+          page: LoadingRoute.page,
           initial: true,
+          path: '/',
+          guards: [
+            AuthMiddleWare(context, pageInfo: HomeRoute.page),
+          ],
+        ),
+        AutoRoute(
+          page: HomeRoute.page,
           path: '/home',
           guards: [AuthMiddleWare(context)],
         ),

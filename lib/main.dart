@@ -1,6 +1,8 @@
+import 'package:fapp_setup/bloc_registrations.dart';
 import 'package:fapp_setup/core/settings/app_lang/app_lang_cubit.dart';
 import 'package:fapp_setup/core/settings/app_theme/app_theme_cubit.dart';
 import 'package:fapp_setup/features/auth/view/bloc/auth_bloc.dart';
+import 'package:fapp_setup/features/internet_connection/bloc/internet_connection_bloc.dart';
 import 'package:fapp_setup/injections/injections.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -25,16 +27,12 @@ void main() async {
 }
 
 class _AppSettings extends StatelessWidget {
-  const _AppSettings({super.key});
+  const _AppSettings();
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider<AppLangCubit>(create: (_) => AppLangCubit()),
-        BlocProvider<AppThemeCubit>(create: (_) => AppThemeCubit()),
-        BlocProvider<AuthBloc>(create: (_) => serviceLocator<AuthBloc>()),
-      ],
+      providers: BlocRegistrations.providers,
       child: const _MainApp(),
     );
   }
@@ -42,26 +40,28 @@ class _AppSettings extends StatelessWidget {
 
 // your app's name
 class _MainApp extends StatelessWidget {
-  const _MainApp({super.key});
+  const _MainApp();
 
   @override
   Widget build(BuildContext context) {
-    return Builder(builder: (context) {
-      final appLandCubit = context.watch<AppLangCubit>();
-      final appTheme = context.watch<AppThemeCubit>();
+    return Builder(
+      builder: (context) {
+        final appLandCubit = context.watch<AppLangCubit>();
+        final appTheme = context.watch<AppThemeCubit>();
 
-      return MaterialApp.router(
-        localizationsDelegates: const [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        locale: appLandCubit.state.locale,
-        supportedLocales: S.delegate.supportedLocales,
-        theme: appTheme.state.themeData,
-        routerConfig: AppRoutes(context).config(),
-      );
-    });
+        return MaterialApp.router(
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          locale: appLandCubit.state.locale,
+          supportedLocales: S.delegate.supportedLocales,
+          theme: appTheme.state.themeData,
+          routerConfig: AppRoutes(context).config(),
+        );
+      },
+    );
   }
 }

@@ -4,6 +4,7 @@ import 'package:fapp_setup/services/shared_prefer/shared_prefer.dart';
 import 'package:fapp_setup/utils/constants.dart';
 import 'package:flutter/foundation.dart';
 import 'package:dio/dio.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 @immutable
 final class DioHelper {
@@ -15,10 +16,11 @@ final class DioHelper {
 
   Future<void> init() async {
     _dio = Dio(await _options());
+    _dio.interceptors.add(PrettyDioLogger());
   }
 
-  Future<void> updateDioOptions() async {
-    _dio.options = await _options();
+  Future<void> updateDioHeaders() async {
+    _dio.options.headers = await _headers();
   }
 
   Future<Map<String, String>> _headers() async {

@@ -69,6 +69,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Internet has been connected`
+  String get internetHasBeenConnected {
+    return Intl.message(
+      'Internet has been connected',
+      name: 'internetHasBeenConnected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No internet connection`
+  String get noInternetConnection {
+    return Intl.message(
+      'No internet connection',
+      name: 'noInternetConnection',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

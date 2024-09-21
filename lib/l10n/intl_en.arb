@@ -1,4 +1,6 @@
 {
   "appSettings": "App settings",
-  "authorizationPage": "Authorization page"
+  "authorizationPage": "Authorization page",
+  "internetHasBeenConnected": "Internet has been connected",
+  "noInternetConnection": "No internet connection"
 }
