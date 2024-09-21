@@ -5,15 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 final class AuthMiddleWare extends AutoRouteGuard {
-  final BuildContext context;
   final PageInfo? pageInfo;
 
-  AuthMiddleWare(this.context, {this.pageInfo});
+  AuthMiddleWare({this.pageInfo});
 
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) {
     // rewrite auth logic here for checking auth middleware
-    final authBloc = BlocProvider.of<AuthBloc>(context);
+    final authBloc = BlocProvider.of<AuthBloc>(
+      router.navigatorKey.currentContext!,
+    );
 
     if (authBloc.state is AuthenticatedState) {
       if (pageInfo != null) {

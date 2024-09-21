@@ -5,9 +5,7 @@ import 'package:flutter/material.dart';
 
 @AutoRouterConfig()
 final class AppRoutes extends RootStackRouter {
-  final BuildContext context;
-
-  AppRoutes(this.context);
+  AppRoutes();
 
   @override
   List<AutoRoute> get routes => [
@@ -15,14 +13,11 @@ final class AppRoutes extends RootStackRouter {
           page: LoadingRoute.page,
           initial: true,
           path: '/',
-          guards: [
-            AuthMiddleWare(context, pageInfo: HomeRoute.page),
-          ],
         ),
         AutoRoute(
           page: HomeRoute.page,
           path: '/home',
-          guards: [AuthMiddleWare(context)],
+          guards: [AuthMiddleWare()],
         ),
         AutoRoute(
           page: AuthorizationRoute.page,

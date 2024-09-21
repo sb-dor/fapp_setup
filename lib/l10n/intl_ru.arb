@@ -1,4 +1,6 @@
 {
   "appSettings": "Настройки приложения",
-  "authorizationPage": "Страница авторизации"
+  "authorizationPage": "Страница авторизации",
+  "internetHasBeenConnected": "Интернет успешно подключен",
+  "noInternetConnection": "Без интернет поключения!"
 }

@@ -1,5 +1,6 @@
 import 'package:fapp_setup/generated/l10n.dart';
 import 'package:fapp_setup/injections/injections.dart';
+import 'package:fapp_setup/main.dart';
 import 'package:fapp_setup/services/flutter_toast_service/flutter_toast_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,6 @@ class InternetConnectionBloc extends Bloc<InternetConnectionEvent, InternetConne
     Emitter<InternetConnectionState> emit,
   ) async {
     bool result = await _internetConnectionHelper.hasInternetAccess;
-    debugPrint("called once");
     if (result) {
       emit(HasInternetConnectionState());
     } else {
@@ -36,12 +36,12 @@ class InternetConnectionBloc extends Bloc<InternetConnectionEvent, InternetConne
         switch (status) {
           case InternetStatus.connected:
             serviceLocator<FlutterToastService>().showToast(
-              S.of(event.context).internetHasBeenConnected,
+              S.of(appConfig.navigatorKey.currentContext!).internetHasBeenConnected,
             );
             return HasInternetConnectionState();
           case InternetStatus.disconnected:
             serviceLocator<FlutterToastService>().showToast(
-              S.of(event.context).noInternetConnection,
+              S.of(appConfig.navigatorKey.currentContext!).noInternetConnection,
             );
             return NoInternetConnectionState();
         }

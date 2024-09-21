@@ -25,6 +25,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "appSettings":
             MessageLookupByLibrary.simpleMessage("Настройки приложения"),
         "authorizationPage":
-            MessageLookupByLibrary.simpleMessage("Страница авторизации")
+            MessageLookupByLibrary.simpleMessage("Страница авторизации"),
+        "internetHasBeenConnected":
+            MessageLookupByLibrary.simpleMessage("Интернет успешно подключен"),
+        "noInternetConnection":
+            MessageLookupByLibrary.simpleMessage("Без интернет поключения!")
       };
 }

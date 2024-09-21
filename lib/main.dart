@@ -13,6 +13,8 @@ import 'package:url_strategy/url_strategy.dart';
 import 'generated/l10n.dart';
 import 'services/app_routes/app_routes.dart';
 
+final appConfig = AppRoutes();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -59,7 +61,7 @@ class _MainApp extends StatelessWidget {
           locale: appLandCubit.state.locale,
           supportedLocales: S.delegate.supportedLocales,
           theme: appTheme.state.themeData,
-          routerConfig: AppRoutes(context).config(),
+          routerConfig: appConfig.config(),
         );
       },
     );

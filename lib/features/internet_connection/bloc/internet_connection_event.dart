@@ -1,11 +1,11 @@
 part of 'internet_connection_bloc.dart';
 
 @immutable
-sealed class InternetConnectionEvent {}
+sealed class InternetConnectionEvent {
+  const InternetConnectionEvent();
+}
 
 @immutable
 final class CheckInternetConnection extends InternetConnectionEvent {
-  final BuildContext context;
-
-  CheckInternetConnection(this.context);
+  const CheckInternetConnection();
 }

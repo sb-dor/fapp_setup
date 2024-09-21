@@ -1,4 +1,5 @@
 import 'package:fapp_setup/injections/auth_injection/auth_injection.dart';
+import 'package:fapp_setup/injections/home_injection/home_injection.dart';
 import 'package:fapp_setup/injections/utils_injections/utils_injections.dart';
 import 'package:get_it/get_it.dart';
 
@@ -10,5 +11,7 @@ abstract final class Injections {
     await UtilsInjections.inject();
 
     await AuthInjection.inject();
+
+    await HomeInjection.inject();
   }
 }
