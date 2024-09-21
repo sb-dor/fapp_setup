@@ -1,6 +1,12 @@
 part of 'auth_bloc.dart';
 
 @immutable
-sealed class AuthState {}
+sealed class AuthState {
+  final AuthStateModel authStateModel;
 
-final class AuthInitial extends AuthState {}
+  const AuthState(this.authStateModel);
+}
+
+final class AuthInitial extends AuthState {
+  const AuthInitial(super.authStateModel);
+}

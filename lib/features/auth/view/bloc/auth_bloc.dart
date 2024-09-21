@@ -1,13 +1,26 @@
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:fapp_setup/features/auth/domain/repo/auth_repo.dart';
+import 'package:fapp_setup/features/auth/view/bloc/state_model/auth_state_model.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'auth_event.dart';
+
 part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  AuthBloc() : super(AuthInitial()) {
-    on<AuthEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+  late final AuthStateModel _currentStateModel;
+
+  final AuthRepo _authRepo;
+
+  AuthBloc(this._authRepo) : super(AuthInitial(AuthStateModel())) {
+    //
+    _currentStateModel = state.authStateModel;
+    //
+    on<AuthEvent>(_authEvent);
   }
+
+  void _authEvent(
+    AuthEvent event,
+    Emitter<AuthState> emit,
+  ) async {}
 }
