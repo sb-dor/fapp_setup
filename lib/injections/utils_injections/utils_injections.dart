@@ -1,13 +1,23 @@
+import 'package:fapp_setup/core/settings/dio_helper/dio_helper.dart';
 import 'package:fapp_setup/injections/injections.dart';
+import 'package:fapp_setup/services/dotenv/dotenv_helper.dart';
 import 'package:fapp_setup/services/shared_prefer/shared_prefer.dart';
 
 abstract final class UtilsInjections {
   static Future<void> inject() async {
     //
-    serviceLocator.registerLazySingleton<SharedPrefer>(
-      () => SharedPrefer(),
+    serviceLocator.registerLazySingleton<SharedPreferHelper>(
+      () => SharedPreferHelper(),
     );
 
-    await serviceLocator<SharedPrefer>().initPref();
+    await serviceLocator<SharedPreferHelper>().initPref();
+
+    serviceLocator.registerLazySingleton<DotEnvHelper>(
+      () => DotEnvHelper(),
+    );
+
+    serviceLocator.registerLazySingleton<DioHelper>(
+      () => DioHelper(),
+    );
   }
 }

@@ -60,7 +60,7 @@ class _MainApp extends StatelessWidget {
         locale: appLandCubit.state.locale,
         supportedLocales: S.delegate.supportedLocales,
         theme: appTheme.state.themeData,
-        routerConfig: AppRoutes().config(),
+        routerConfig: AppRoutes(context).config(),
       );
     });
   }

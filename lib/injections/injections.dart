@@ -1,3 +1,4 @@
+import 'package:fapp_setup/injections/auth_injection/auth_injection.dart';
 import 'package:fapp_setup/injections/utils_injections/utils_injections.dart';
 import 'package:get_it/get_it.dart';
 
@@ -7,5 +8,7 @@ abstract final class Injections {
   static Future<void> inject() async {
     //
     await UtilsInjections.inject();
+
+    await AuthInjection.inject();
   }
 }

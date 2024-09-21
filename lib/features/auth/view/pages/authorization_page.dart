@@ -18,7 +18,7 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
         title: Text(
           // just select whole word and click to lamp
           // in order to extract to ARB file
-          S.of(context).appSettings,
+          S.of(context).authorizationPage,
         ),
       ),
     );

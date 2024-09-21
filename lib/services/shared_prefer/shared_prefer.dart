@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-final class SharedPrefer {
+final class SharedPreferHelper {
   late final SharedPreferences _sharedPreferences;
 
   Future<void> initPref() async => _sharedPreferences = await SharedPreferences.getInstance();

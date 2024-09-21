@@ -12,7 +12,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   final AuthRepo _authRepo;
 
-  AuthBloc(this._authRepo) : super(AuthInitial(AuthStateModel())) {
+  AuthBloc(this._authRepo) : super(UnAuthenticatedState(AuthStateModel())) {
     //
     _currentStateModel = state.authStateModel;
     //
