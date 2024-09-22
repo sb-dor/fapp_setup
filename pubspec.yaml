@@ -52,7 +52,9 @@ dependencies:
   shimmer: ^3.0.0
   cached_network_image: ^3.4.1
   flutter_blurhash: ^0.8.2
-  collection: ^1.19.0
+  collection: ^1.18.0
+  rename: ^3.0.2
+  firebase_core: ^3.5.0
 
 dev_dependencies:
   flutter_test:
