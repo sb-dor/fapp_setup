@@ -55,6 +55,8 @@ dependencies:
   collection: ^1.18.0
   rename: ^3.0.2
   firebase_core: ^3.5.0
+  firebase_auth: ^5.3.0
+  google_sign_in: ^6.2.1
 
 dev_dependencies:
   flutter_test:
