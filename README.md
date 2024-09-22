@@ -14,6 +14,8 @@
 - **🌗 Theme**: Light and Dark mode support for enhanced user experience.
 - **🌍 Language**: Multi-language support with locale integration for a global audience.
 - **🔑 Google Authentication**: Seamless sign-in and authentication with Google accounts.
+- **📧 Firebase Email/Password Authentication**: Built-in Firebase authentication using email and password.
+- **🔵 Facebook Authentication**: Easy login and authentication with Facebook accounts.
 
 ## 🛠️ Usage
 
