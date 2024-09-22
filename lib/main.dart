@@ -4,12 +4,14 @@ import 'package:fapp_setup/core/settings/app_theme/app_theme_cubit.dart';
 import 'package:fapp_setup/features/auth/view/bloc/auth_bloc.dart';
 import 'package:fapp_setup/features/internet_connection/bloc/internet_connection_bloc.dart';
 import 'package:fapp_setup/injections/injections.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:url_strategy/url_strategy.dart';
 
+import 'firebase_options.dart';
 import 'generated/l10n.dart';
 import 'services/app_routes/app_routes.dart';
 
@@ -18,6 +20,11 @@ final appConfig = AppRoutes();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // if (defaultTargetPlatform != TargetPlatform.linux) {
+  //   await Firebase.initializeApp(
+  //     options: DefaultFirebaseOptions.currentPlatform,
+  //   );
+  // }
   // other configurations here
   if (kIsWeb) {
     setPathUrlStrategy();
