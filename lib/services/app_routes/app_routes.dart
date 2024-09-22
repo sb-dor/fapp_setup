@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:fapp_setup/services/app_routes/app_routes.gr.dart';
 import 'package:fapp_setup/services/app_routes/middlewares/auth_middleware.dart';
-import 'package:flutter/material.dart';
 
 @AutoRouterConfig()
 final class AppRoutes extends RootStackRouter {
