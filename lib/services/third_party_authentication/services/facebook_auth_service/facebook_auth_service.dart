@@ -6,12 +6,11 @@ import 'package:fapp_setup/core/global_entities/entities/user.dart' as user;
 import 'package:fapp_setup/core/global_entities/models/user_model/user_model.dart';
 import 'package:fapp_setup/injections/injections.dart';
 import 'package:fapp_setup/services/shared_prefer/shared_prefer.dart';
-import 'package:fapp_setup/services/third_party_authentication/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
-class FacebookAuthService implements AuthService {
+class FacebookAuthService {
   // Initialize FacebookAuth instance
   final FacebookAuth _faceBookAuth = FacebookAuth.instance;
 
@@ -45,8 +44,7 @@ class FacebookAuthService implements AuthService {
     );
   }
 
-  @override
-  Future<user.User?> auth({AuthData? authData}) async {
+  Future<user.User?> auth() async {
     if (defaultTargetPlatform == TargetPlatform.iOS) {
       return await _facebookIOSSignIn(); // Sign-in for iOS platform
     } else {
@@ -133,8 +131,7 @@ class FacebookAuthService implements AuthService {
     return UserModel.fromFirebaseAuthUser(data);
   }
 
-  @override
-  Future<user.User?> checkAuth({AuthData? authData}) async {
+  Future<user.User?> checkAuth() async {
     try {
       if (_firebaseAuth.currentUser != null) return null; // Exit if user is already signed in
 
@@ -156,5 +153,13 @@ class FacebookAuthService implements AuthService {
       debugPrint("Authentication error: $e"); // Log authentication error
       return null;
     }
+  }
+
+  // Sign out from both Firebase and Facebook
+  Future<void> signOut() async {
+    await _firebaseAuth.signOut(); // Sign out from Firebase
+    await _faceBookAuth.logOut(); // Log out from Facebook
+    await _sharedPref.deleteByKey(
+        key: "facebook_token"); // Remove saved Facebook token from shared preferences
   }
 }

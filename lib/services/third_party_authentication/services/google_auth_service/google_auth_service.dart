@@ -2,13 +2,12 @@ import 'package:fapp_setup/core/global_entities/entities/user.dart' as user;
 import 'package:fapp_setup/core/global_entities/models/user_model/user_model.dart';
 import 'package:fapp_setup/injections/injections.dart';
 import 'package:fapp_setup/services/shared_prefer/shared_prefer.dart';
-import 'package:fapp_setup/services/third_party_authentication/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'google_env.dart';
 
-class GoogleAuthService implements AuthService {
+class GoogleAuthService {
   final GoogleSignIn _googleSignIn = GoogleSignIn(
     clientId: GoogleEnv.clientId,
   );
@@ -18,8 +17,7 @@ class GoogleAuthService implements AuthService {
   final SharedPreferHelper _sharedPref = serviceLocator<SharedPreferHelper>();
 
   // user if from firebase user
-  @override
-  Future<user.User?> auth({AuthData? authData}) async {
+  Future<user.User?> auth() async {
     try {
       GoogleSignInAccount? googleUser;
 
@@ -75,8 +73,7 @@ class GoogleAuthService implements AuthService {
     }
   }
 
-  @override
-  Future<user.User?> checkAuth({AuthData? authData}) async {
+  Future<user.User?> checkAuth() async {
     try {
       // Get access token from shared preferences
       String? accessToken = _sharedPref.getStringByKey(
@@ -145,5 +142,9 @@ class GoogleAuthService implements AuthService {
     } else {
       return null;
     }
+  }
+
+  Future<void> logOut() async {
+    await _googleSignIn.signOut();
   }
 }
