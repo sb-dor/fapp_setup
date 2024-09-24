@@ -16,7 +16,7 @@ final class AppRoutes extends RootStackRouter {
         AutoRoute(
           page: HomeRoute.page,
           path: '/home',
-          guards: [AuthMiddleWare()],
+          guards: [AuthMiddleWare()], // pageRouteInfo: HomeRoute()
         ),
         AutoRoute(
           page: AuthorizationRoute.page,
