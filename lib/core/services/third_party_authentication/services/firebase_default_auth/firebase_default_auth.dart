@@ -1,7 +1,7 @@
 import 'package:fapp_setup/core/global_entities/entities/user.dart' as user;
 import 'package:fapp_setup/core/global_entities/models/user_model/user_model.dart';
+import 'package:fapp_setup/core/services/shared_prefer/shared_prefer.dart';
 import 'package:fapp_setup/injections/injections.dart';
-import 'package:fapp_setup/services/shared_prefer/shared_prefer.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 

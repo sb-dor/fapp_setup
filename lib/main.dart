@@ -8,9 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:url_strategy/url_strategy.dart';
-
+import 'core/services/app_routes/app_routes.dart';
 import 'generated/l10n.dart';
-import 'services/app_routes/app_routes.dart';
 
 final appConfig = AppRoutes();
 

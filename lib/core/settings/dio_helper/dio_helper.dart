@@ -1,7 +1,7 @@
+import 'package:fapp_setup/core/services/dotenv/dotenv_helper.dart';
+import 'package:fapp_setup/core/services/shared_prefer/shared_prefer.dart';
+import 'package:fapp_setup/core/utils/constants.dart';
 import 'package:fapp_setup/injections/injections.dart';
-import 'package:fapp_setup/services/dotenv/dotenv_helper.dart';
-import 'package:fapp_setup/services/shared_prefer/shared_prefer.dart';
-import 'package:fapp_setup/utils/constants.dart';
 import 'package:flutter/foundation.dart';
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';

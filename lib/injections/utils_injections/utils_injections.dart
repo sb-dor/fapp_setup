@@ -1,9 +1,9 @@
+import 'package:fapp_setup/core/services/dotenv/dotenv_helper.dart';
+import 'package:fapp_setup/core/services/flutter_toast_service/flutter_toast_service.dart';
+import 'package:fapp_setup/core/services/shared_prefer/shared_prefer.dart';
 import 'package:fapp_setup/core/settings/dio_helper/dio_helper.dart';
+import 'package:fapp_setup/core/utils/reusable_functions.dart';
 import 'package:fapp_setup/injections/injections.dart';
-import 'package:fapp_setup/services/dotenv/dotenv_helper.dart';
-import 'package:fapp_setup/services/flutter_toast_service/flutter_toast_service.dart';
-import 'package:fapp_setup/services/shared_prefer/shared_prefer.dart';
-import 'package:fapp_setup/utils/reusable_functions.dart';
 
 abstract final class UtilsInjections {
   static Future<void> inject() async {

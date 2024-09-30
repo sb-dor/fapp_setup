@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:fapp_setup/core/services/app_routes/app_routes.gr.dart';
 import 'package:fapp_setup/features/auth/view/bloc/auth_bloc.dart';
-import 'package:fapp_setup/services/app_routes/app_routes.gr.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 final class AuthMiddleWare extends AutoRouteGuard {

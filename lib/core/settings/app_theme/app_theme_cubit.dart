@@ -1,8 +1,8 @@
+import 'package:fapp_setup/core/services/shared_prefer/shared_pref_constants.dart';
+import 'package:fapp_setup/core/services/shared_prefer/shared_prefer.dart';
 import 'package:fapp_setup/core/settings/app_theme/theme_settings.dart';
+import 'package:fapp_setup/core/utils/constants.dart';
 import 'package:fapp_setup/injections/injections.dart';
-import 'package:fapp_setup/services/shared_prefer/shared_pref_constants.dart';
-import 'package:fapp_setup/services/shared_prefer/shared_prefer.dart';
-import 'package:fapp_setup/utils/constants.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 

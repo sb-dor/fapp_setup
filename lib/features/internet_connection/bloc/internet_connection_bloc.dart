@@ -1,7 +1,7 @@
+import 'package:fapp_setup/core/services/flutter_toast_service/flutter_toast_service.dart';
 import 'package:fapp_setup/generated/l10n.dart';
 import 'package:fapp_setup/injections/injections.dart';
 import 'package:fapp_setup/main.dart';
-import 'package:fapp_setup/services/flutter_toast_service/flutter_toast_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
