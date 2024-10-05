@@ -8,21 +8,57 @@ class PlatformListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PlatformHelper.isCupertino()
-        ? const Column(
+        ? Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CupertinoListTile(
-                title: Text("Cupertino listtile"),
-                subtitle: Text("Cupertino subtitle"),
-              ),
+              // you can use tiles without CupertinoListSection¬
+              CupertinoListSection(
+                children: [
+                  CupertinoListTile(
+                    leading: Container(
+                      width: 40,
+                      height: 40,
+                      color: Colors.amber,
+                    ),
+                    title: const Text("Cupertino listtile"),
+                    subtitle: const Text("Cupertino subtitle"),
+                  ),
+                  CupertinoListTile(
+                    leading: Container(
+                      width: 40,
+                      height: 40,
+                      color: Colors.blue,
+                    ),
+                    title: const Text("Cupertino listtile"),
+                    subtitle: const Text("Cupertino subtitle"),
+                  ),
+                ],
+              )
             ],
           )
-        : const Center(
-            child: ListTile(
-              title: Text("Material listile"),
-              subtitle: Text("Material subtitle"),
-            ),
-          );
+        : Center(
+            child: CupertinoListSection(
+            children: [
+              ListTile(
+                leading: Container(
+                  width: 40,
+                  height: 40,
+                  color: Colors.amber,
+                ),
+                title: const Text("Material listile"),
+                subtitle: const Text("Material subtitle"),
+              ),
+              ListTile(
+                leading: Container(
+                  width: 40,
+                  height: 40,
+                  color: Colors.amber,
+                ),
+                title: const Text("Material listile"),
+                subtitle: const Text("Material subtitle"),
+              ),
+            ],
+          ));
   }
 }

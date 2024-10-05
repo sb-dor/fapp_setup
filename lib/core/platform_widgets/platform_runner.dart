@@ -26,7 +26,7 @@ class PlatformRunner extends StatelessWidget {
             home: Scaffold(
               body: SizedBox.expand(
                 child: Center(
-                  child: ContextMenuExample(),
+                  child: PlatformListTile(),
                 ),
               ),
             ),
