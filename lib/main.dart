@@ -63,6 +63,10 @@ class _MainApp extends StatelessWidget {
         final appTheme = context.watch<AppThemeCubit>();
 
         return MaterialApp.router(
+          builder: (context, child) => MediaQuery(
+            data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: true),
+            child: child!,
+          ),
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
