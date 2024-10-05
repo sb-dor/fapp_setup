@@ -1,5 +1,6 @@
 import 'package:fapp_setup/core/platform_widgets/platform_button.dart';
 import 'package:fapp_setup/core/platform_widgets/platform_helper.dart';
+import 'package:fapp_setup/core/platform_widgets/platform_listtile.dart';
 import 'package:fapp_setup/core/platform_widgets/platform_text_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,12 +13,20 @@ class PlatformRunner extends StatelessWidget {
     return PlatformHelper.isCupertino()
         ? const CupertinoApp(
             home: CupertinoPageScaffold(
-              child: Center(child: PlatformTextButton()),
+              child: Center(
+                child: SizedBox.expand(
+                  child: PlatformListTile(),
+                ),
+              ),
             ),
           )
         : const MaterialApp(
             home: Scaffold(
-              body: Center(child: PlatformTextButton()),
+              body: SizedBox.expand(
+                child: Center(
+                  child: PlatformListTile(),
+                ),
+              ),
             ),
           );
   }
