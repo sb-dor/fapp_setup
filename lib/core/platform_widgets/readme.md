@@ -9,7 +9,8 @@ learn about this package above here:
 
 1. https://github.com/stryder-dev/flutter_platform_widgets
 2. https://github.com/stryder-dev/flutter_platform_widgets/tree/master/example/lib
-3. https://www.youtube.com/watch?v=LsEwF15bCwM
+3. https://github.com/stryder-dev/flutter_platform_widgets/wiki/Platform-Widget-Catalog
+4. https://www.youtube.com/watch?v=LsEwF15bCwM
 
 All specific widgets for platforms as iOS and Android you can find here:
 
