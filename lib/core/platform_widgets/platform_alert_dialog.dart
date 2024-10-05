@@ -49,12 +49,16 @@ class _CupertinoDialog extends StatelessWidget {
       actions: [
         // you can use PlatformDialogAction
         CupertinoDialogAction(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           isDestructiveAction: true,
           child: const Text("Yes"),
         ),
         CupertinoDialogAction(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           isDefaultAction: true,
           child: const Text("No"),
         )
@@ -80,11 +84,15 @@ class _MaterialDialog extends StatelessWidget {
       actions: [
         // you can use PlatformDialogAction
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Text("Yes"),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Text("No"),
         ),
       ],

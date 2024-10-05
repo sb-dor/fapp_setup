@@ -11,12 +11,12 @@ class PlatformRunner extends StatelessWidget {
     return PlatformHelper.isCupertino()
         ? const CupertinoApp(
             home: CupertinoPageScaffold(
-              child: PlatformButton(),
+              child: Center(child: PlatformButton()),
             ),
           )
         : const MaterialApp(
             home: Scaffold(
-              body: PlatformButton(),
+              body: Center(child: PlatformButton()),
             ),
           );
   }
