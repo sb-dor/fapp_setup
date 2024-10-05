@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'cupertino_context_menu.dart';
+import 'cupertino_sliding_segment_control.dart';
 
 class PlatformRunner extends StatelessWidget {
   const PlatformRunner({super.key});
@@ -17,7 +18,7 @@ class PlatformRunner extends StatelessWidget {
             home: CupertinoPageScaffold(
               child: Center(
                 child: SizedBox.expand(
-                  child: PlatformListTile(),
+                  child: CupertinoSlidingSegmentControl(),
                 ),
               ),
             ),
@@ -26,7 +27,7 @@ class PlatformRunner extends StatelessWidget {
             home: Scaffold(
               body: SizedBox.expand(
                 child: Center(
-                  child: PlatformListTile(),
+                  child: CupertinoSlidingSegmentControl(),
                 ),
               ),
             ),
