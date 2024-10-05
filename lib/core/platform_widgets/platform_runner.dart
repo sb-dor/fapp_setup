@@ -5,6 +5,8 @@ import 'package:fapp_setup/core/platform_widgets/platform_text_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'cupertino_context_menu.dart';
+
 class PlatformRunner extends StatelessWidget {
   const PlatformRunner({super.key});
 
@@ -24,7 +26,7 @@ class PlatformRunner extends StatelessWidget {
             home: Scaffold(
               body: SizedBox.expand(
                 child: Center(
-                  child: PlatformListTile(),
+                  child: ContextMenuExample(),
                 ),
               ),
             ),
