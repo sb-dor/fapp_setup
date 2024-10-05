@@ -4,6 +4,8 @@ import 'package:fapp_setup/core/platform_widgets/platform_helper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// for sliver app bar animation :
+// https://stackoverflow.com/questions/59243525/sliver-appbar-collapsing-toolbar-animate-title-from-left-to-center-in-flutter
 class PlatformSliverNavigationBar extends StatelessWidget {
   const PlatformSliverNavigationBar({super.key});
 

@@ -2,6 +2,7 @@ import 'package:fapp_setup/core/platform_widgets/platform_button.dart';
 import 'package:fapp_setup/core/platform_widgets/platform_helper.dart';
 import 'package:fapp_setup/core/platform_widgets/platform_listtile.dart';
 import 'package:fapp_setup/core/platform_widgets/platform_sliver_navigation_bar.dart';
+import 'package:fapp_setup/core/platform_widgets/platform_switch.dart';
 import 'package:fapp_setup/core/platform_widgets/platform_text_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +49,7 @@ class _CupertinoApp extends StatelessWidget {
       ),
       child: const Center(
         child: SizedBox.expand(
-          child: CupertinoSlidingSegmentControl(),
+          child: PlatformSwitch(),
         ),
       ),
     );
@@ -83,7 +84,7 @@ class _MaterialApp extends StatelessWidget {
       ),
       body: const SizedBox.expand(
         child: Center(
-          child: CupertinoSlidingSegmentControl(),
+          child: PlatformSwitch(),
         ),
       ),
     );
