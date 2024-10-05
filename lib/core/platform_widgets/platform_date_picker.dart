@@ -16,6 +16,17 @@ abstract final class PlatformDateTimePicker {
             mode: mode,
           );
         },
+      ).then(
+        (then) async {
+          if (mode == CupertinoDatePickerMode.dateAndTime) {
+            await showCupertinoModalPopup(
+              context: context,
+              builder: (context) => const _CupertinoDateTimePicker(
+                mode: CupertinoDatePickerMode.time,
+              ),
+            );
+          }
+        },
       );
     } else {
       switch (mode) {

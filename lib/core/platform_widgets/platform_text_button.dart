@@ -14,7 +14,7 @@ class PlatformTextButton extends StatelessWidget {
             onPressed: () {
               PlatformDateTimePicker.showPicker(
                 context,
-                mode: CupertinoDatePickerMode.time,
+                mode: CupertinoDatePickerMode.dateAndTime,
               );
             },
           )
@@ -22,7 +22,7 @@ class PlatformTextButton extends StatelessWidget {
             onPressed: () {
               PlatformDateTimePicker.showPicker(
                 context,
-                mode: CupertinoDatePickerMode.time,
+                mode: CupertinoDatePickerMode.dateAndTime,
               );
             },
             child: const Text("Text button"),

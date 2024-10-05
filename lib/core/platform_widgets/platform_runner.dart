@@ -49,7 +49,7 @@ class _CupertinoApp extends StatelessWidget {
       ),
       child: const Center(
         child: SizedBox.expand(
-          child: PlatformSwitch(),
+          child: PlatformTextButton(),
         ),
       ),
     );
@@ -84,7 +84,7 @@ class _MaterialApp extends StatelessWidget {
       ),
       body: const SizedBox.expand(
         child: Center(
-          child: PlatformSwitch(),
+          child: PlatformTextButton(),
         ),
       ),
     );
