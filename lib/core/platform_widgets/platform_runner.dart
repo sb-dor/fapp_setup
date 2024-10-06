@@ -8,6 +8,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'cupertino_context_menu.dart';
+import 'cupertino_picker_widget.dart';
 import 'cupertino_sliding_segment_control.dart';
 
 class PlatformRunner extends StatelessWidget {
@@ -49,7 +50,7 @@ class _CupertinoApp extends StatelessWidget {
       ),
       child: const Center(
         child: SizedBox.expand(
-          child: PlatformTextButton(),
+          child: CupertinoPickerWidget(),
         ),
       ),
     );
@@ -84,7 +85,7 @@ class _MaterialApp extends StatelessWidget {
       ),
       body: const SizedBox.expand(
         child: Center(
-          child: PlatformTextButton(),
+          child: CupertinoPickerWidget(),
         ),
       ),
     );
