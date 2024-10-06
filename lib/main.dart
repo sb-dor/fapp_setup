@@ -8,7 +8,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:url_strategy/url_strategy.dart';
-import 'core/platform_widgets/platform_runner.dart';
 import 'core/services/app_routes/app_routes.dart';
 import 'generated/l10n.dart';
 
@@ -46,7 +45,7 @@ class _AppSettings extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: BlocRegistrations.providers,
-      child: PlatformRunner(),
+      child: _MainApp(),
     );
   }
 }
